@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Клубника «Классика» в шоколаде — подарочный набор ручной работы.">
+  <title>Клубника «Классика» — Berry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Свежие ягоды · ручная работа · доставка по городу</div>
+
+  <header class="site-header shell" id="top">
+    <nav class="site-nav" aria-label="Основная навигация">
+      <a class="brand" href="/" aria-label="На главную"><span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
+      <div class="site-nav__links" id="menu">
+        <a href="/">Главная</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" type="button" aria-expanded="false">Каталог <span class="chevron" aria-hidden="true"></span></button>
+          <div class="nav-dropdown__panel">
+            <a href="/catalog">Смотреть всё</a>
+            <a href="/catalog?category=strawberry">Клубника в шоколаде</a>
+            <a href="/catalog?category=raspberry">Малина в шоколаде</a>
+            <a href="/catalog?category=blueberry">Черника в шоколаде</a>
+            <a href="/catalog?category=donuts">Ягодные пончики</a>
+            <a href="/catalog?category=candies">Корпусные конфеты</a>
+          </div>
+        </div>
+        <a href="/#delivery">Доставка</a>
+        <a href="/contact">Контакты</a>
+      </div>
+      <div class="site-nav__tools">
+        <a class="cart-button" href="/cart" aria-label="Корзина">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8.5 11.5h15l-1 14h-13l-1-14Z"></path><path d="M12 12V9a4 4 0 0 1 8 0v3"></path></svg>
+          <span class="cart-count" hidden>0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="product-main">
+    <section class="product-detail shell" aria-labelledby="product-title">
+      <div class="product-gallery reveal">
+        <button class="product-media color-panel" type="button" aria-label="Увеличить изображение товара">
+          <span class="product-media__number">01</span>
+          <span class="product-media__hint" aria-hidden="true">＋</span>
+        </button>
+      </div>
+
+      <div class="product-info reveal">
+        <p class="eyebrow">Клубника в шоколаде</p>
+        <h1 id="product-title">Клубника «Классика»</h1>
+        <p class="product-price" data-product-price>от 1 490 ₽</p>
+        <p class="product-lead">Свежая клубника, молочный и тёмный шоколад, тонкий декор из сублимированных ягод.</p>
+
+        <fieldset class="variant-picker">
+          <legend>Размер набора</legend>
+          <div class="variant-options">
+            <label><input type="radio" name="product-size" value="6" data-price="1490" checked><span>6 ягод</span></label>
+            <label><input type="radio" name="product-size" value="12" data-price="2490"><span>12 ягод</span></label>
+            <label><input type="radio" name="product-size" value="24" data-price="4290"><span>24 ягоды</span></label>
+          </div>
+        </fieldset>
+
+        <div class="quantity-block">
+          <label for="product-quantity">Количество</label>
+          <div class="quantity-stepper">
+            <button type="button" data-quantity-action="minus" aria-label="Уменьшить количество">−</button>
+            <input id="product-quantity" type="number" min="1" max="20" value="1" inputmode="numeric">
+            <button type="button" data-quantity-action="plus" aria-label="Увеличить количество">＋</button>
+          </div>
+        </div>
+
+        <div class="purchase-actions">
+          <button class="add-to-cart" type="button">Добавить в корзину</button>
+          <button class="buy-now" type="button">Купить сейчас</button>
+        </div>
+        <p class="purchase-note">Готовим набор специально к выбранной дате. Оттенок ягод и декора может немного отличаться.</p>
+
+        <div class="product-story">
+          <p class="product-story__title">Та самая клубника.</p>
+          <p>Спелая, ароматная и покрытая тонким слоем шоколада. Собираем набор вручную перед отправкой, чтобы ягоды сохранили свежесть, а подарок выглядел безупречно.</p>
+        </div>
+        <button class="share-product" type="button"><span aria-hidden="true">↗</span> Поделиться</button>
+      </div>
+    </section>
+
+    <section class="product-faq shell reveal" aria-labelledby="faq-title">
+      <p class="eyebrow">Если вы хотите знать больше</p>
+      <h2 id="faq-title">Частые вопросы</h2>
+      <div class="faq-list">
+        <details open>
+          <summary><span>Как долго хранится набор?</span><i aria-hidden="true"></i></summary>
+          <p>Лучше всего съесть ягоды в день получения. В холодильнике при температуре +2…+6 °C набор хранится до 24 часов.</p>
+        </details>
+        <details>
+          <summary><span>Как проходит доставка?</span><i aria-hidden="true"></i></summary>
+          <p>Доставляем в согласованный двухчасовой интервал. Набор едет в плотной подарочной коробке и термосумке.</p>
+        </details>
+        <details>
+          <summary><span>Можно изменить цвет и декор?</span><i aria-hidden="true"></i></summary>
+          <p>Да. Напишите пожелания при оформлении заказа — подберём цвет шоколада, посыпку и небольшую надпись к вашему событию.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div class="product-lightbox" hidden role="dialog" aria-modal="true" aria-label="Увеличенное изображение товара">
+    <button class="product-lightbox__close" type="button" aria-label="Закрыть">×</button>
+    <div class="product-lightbox__visual color-panel"><span>01</span></div>
+  </div>
+
+  <footer class="footer" id="delivery">
+    <div class="shell footer__grid">
+      <div><h2>Навигация</h2><a href="/">Главная</a><a href="/catalog">Каталог</a><a href="/#delivery">Доставка</a><a href="/contact">Контакты</a></div>
+      <div><h2>Наша идея</h2><p>Создаём сладкие подарки, которые радуют ещё до первого кусочка.</p></div>
+      <a class="brand brand--footer" href="#top" aria-label="Наверх"><span></span></a>
+      <form class="subscribe"><label for="email">Письма о новых коллекциях</label><div><input id="email" type="email" placeholder="Ваш email"><button type="submit" aria-label="Подписаться">→</button></div></form>
+      <div class="socials"><a href="#">VK</a><a href="#">TG</a><a href="#">IN</a></div>
+    </div>
+    <div class="footer__bottom">© 2026 Berry · сделано с любовью</div>
+  </footer>
+</body>
+</html>

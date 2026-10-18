@@ -1,0 +1,17 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# Главная страница всегда открывается по корневому адресу.
+RewriteCond %{THE_REQUEST} \s/+index\.(?:php|html)[\s?] [NC]
+RewriteRule ^index\.(?:php|html)$ / [R=301,L]
+
+# Убираем расширения из прямых и старых ссылок.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.(?:php|html)[\s?] [NC]
+RewriteRule ^(.+)\.(?:php|html)$ /$1 [R=301,L,NE]
+
+# Внутренне подставляем .php для чистых адресов.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L,QSA]
