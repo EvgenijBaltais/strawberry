@@ -8,15 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261021k">
+  <script src="script.js?v=20261021d" defer></script>
 </head>
 <body>
-  <div class="announcement">Свежие ягоды · ручная работа · доставка по городу</div>
+  <?php require __DIR__ . '/announcement.php'; ?>
 
   <header class="site-header shell" id="top">
     <nav class="site-nav" aria-label="Основная навигация">
-      <a class="brand" href="/" aria-label="На главную"><span></span></a>
+      <a class="brand" href="/" aria-label="На главную"><img src="/assets/logo.png" alt=""></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
       <div class="site-nav__links" id="menu">
         <a href="/">Главная</a>
@@ -33,7 +33,6 @@
         </div>
         <a href="#delivery">Доставка</a>
         <a href="/contact">Контакты</a>
-        <a href="/policy">Согласие на обработку персональных данных</a>
       </div>
       <div class="site-nav__tools">
         <a class="cart-button" href="/cart" aria-label="Корзина">
@@ -47,7 +46,7 @@
     </nav>
 
     <div class="hero">
-      <div class="hero__visual color-panel color-panel--berry" aria-label="Место для главной фотографии"></div>
+      <div class="hero__visual" role="img" aria-label="Подарочный набор клубники в шоколаде"><img src="assets/images/strawberry-bouquet.jpg" alt="" fetchpriority="high" decoding="async"></div>
       <div class="hero__copy">
         <p class="eyebrow">Сделано для красивых моментов</p>
         <h1>Ягоды, которые хочется дарить</h1>
@@ -65,22 +64,22 @@
       </div>
       <div class="product-grid">
         <article class="product-card">
-          <a class="product-card__visual color-panel color-panel--red" href="/product" aria-label="Клубника в молочном шоколаде"><span>01</span></a>
+          <a class="product-card__visual" href="/product" aria-label="Клубника в молочном шоколаде"><img src="assets/images/strawberry-classic.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="/product">Клубника в молочном</a></h3>
           <p>от 1 490 ₽</p>
         </article>
         <article class="product-card">
-          <a class="product-card__visual color-panel color-panel--pink" href="#" aria-label="Малина в белом шоколаде"><span>02</span></a>
+          <a class="product-card__visual" href="#" aria-label="Малина в белом шоколаде"><img src="assets/images/raspberry-chocolate.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Малина в белом</a></h3>
           <p>от 1 290 ₽</p>
         </article>
         <article class="product-card">
-          <a class="product-card__visual color-panel color-panel--blue" href="#" aria-label="Черника в тёмном шоколаде"><span>03</span></a>
+          <a class="product-card__visual" href="#" aria-label="Черника в тёмном шоколаде"><img src="assets/images/blueberry-skewer.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Черника в тёмном</a></h3>
           <p>от 1 190 ₽</p>
         </article>
         <article class="product-card">
-          <a class="product-card__visual color-panel color-panel--yellow" href="#" aria-label="Шоколадно-ягодные пончики"><span>04</span></a>
+          <a class="product-card__visual" href="#" aria-label="Шоколадно-ягодные пончики"><img src="assets/images/donuts-berry.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Ягодные пончики</a></h3>
           <p>от 990 ₽</p>
         </article>
@@ -96,15 +95,15 @@
     <section class="section shell reveal" id="collections">
       <div class="category-grid">
         <a class="category-card" href="#">
-          <span class="category-card__visual color-panel color-panel--apricot"></span>
+          <span class="category-card__visual"><img src="assets/images/strawberry-assorted.jpg" alt="" loading="lazy" decoding="async"></span>
           <strong>Ягоды в шоколаде <i>→</i></strong>
         </a>
         <a class="category-card" href="#">
-          <span class="category-card__visual color-panel color-panel--lilac"></span>
+          <span class="category-card__visual"><img src="assets/images/donuts-berry.jpg" alt="" loading="lazy" decoding="async"></span>
           <strong>Пончики <i>→</i></strong>
         </a>
         <a class="category-card" href="#">
-          <span class="category-card__visual color-panel color-panel--aqua"></span>
+          <span class="category-card__visual"><img src="assets/images/gift-box.jpg" alt="" loading="lazy" decoding="async"></span>
           <strong>Подарочные наборы <i>→</i></strong>
         </a>
       </div>
@@ -113,38 +112,16 @@
     <section class="craft shell reveal" id="about">
       <h2>Собираем вручную</h2>
       <div class="craft__grid">
-        <div class="color-panel color-panel--green" aria-label="Место для фотографии процесса"></div>
+        <div class="craft__visual" role="img" aria-label="Ягоды и шоколад для набора"><img src="assets/images/strawberry-party.jpg" alt="" loading="lazy" decoding="async"></div>
         <div class="craft__copy">
           <h3>Свежие ягоды, хороший шоколад и внимание к каждой детали.</h3>
           <p>Готовим небольшими партиями и оформляем набор только перед отправкой. Цвет, надпись и декор можно подобрать под ваш повод.</p>
           <a class="text-link" href="#">Узнать больше <span>→</span></a>
         </div>
-        <div class="color-panel color-panel--cream" aria-label="Место для фотографии упаковки"></div>
+        <div class="craft__visual" role="img" aria-label="Подарочная коробка шоколадных конфет"><img src="assets/images/gift-box.jpg" alt="" loading="lazy" decoding="async"></div>
       </div>
     </section>
   </main>
-
-  <footer class="footer" id="delivery">
-    <div class="shell footer__grid">
-      <div>
-        <h2>Навигация</h2>
-        <a href="/">Главная</a>
-        <a href="/catalog">Каталог</a>
-        <a href="#delivery">Доставка</a>
-        <a href="/contact">Контакты</a>
-      </div>
-      <div>
-        <h2>Наша идея</h2>
-        <p>Создаём сладкие подарки, которые радуют ещё до первого кусочка.</p>
-      </div>
-      <a class="brand brand--footer" href="#top" aria-label="На главную"><span></span></a>
-      <form class="subscribe">
-        <label for="email">Письма о новых коллекциях</label>
-        <div><input id="email" type="email" placeholder="Ваш email"><button type="submit" aria-label="Подписаться">→</button></div>
-      </form>
-      <div class="socials"><a href="#">VK</a><a href="#">TG</a><a href="#">IN</a></div>
-    </div>
-    <div class="footer__bottom">© 2026 Berry · сделано с любовью</div>
-  </footer>
+  <?php require __DIR__ . '/footer.php'; ?>
 </body>
 </html>

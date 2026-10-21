@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261021k">
+  <script src="script.js?v=20261021d" defer></script>
 </head>
 <body>
-  <div class="announcement">Свежие ягоды · ручная работа · доставка по городу</div>
+  <?php require __DIR__ . '/announcement.php'; ?>
   <header class="site-header shell" id="top">
     <nav class="site-nav" aria-label="Основная навигация">
-      <a class="brand" href="/" aria-label="На главную"><span></span></a>
+      <a class="brand" href="/" aria-label="На главную"><img src="/assets/logo.png" alt=""></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
       <div class="site-nav__links" id="menu">
         <a href="/">Главная</a>
@@ -43,7 +43,7 @@
     <section class="cart-content reveal" data-cart-content aria-label="Товары в корзине">
       <div class="cart-labels"><span>Товар</span><span>Количество</span><span>Итого</span></div>
       <article class="cart-item">
-        <a class="cart-item__visual color-panel" href="/product" aria-label="Клубника Классика"><span>01</span></a>
+        <a class="cart-item__visual" href="/product" aria-label="Клубника Классика"><img src="assets/images/strawberry-classic.jpg" alt="" loading="lazy" decoding="async"></a>
         <div class="cart-item__info">
           <h2><a href="/product">Клубника «Классика»</a></h2>
           <p data-cart-unit-price>1 490 ₽</p>
@@ -74,16 +74,6 @@
       <a class="button" href="/catalog">Перейти в каталог</a>
     </section>
   </main>
-
-  <footer class="footer" id="delivery">
-    <div class="shell footer__grid">
-      <div><h2>Навигация</h2><a href="/">Главная</a><a href="/catalog">Каталог</a><a href="/#delivery">Доставка</a><a href="/contact">Контакты</a><a href="/policy">Согласие на обработку персональных данных</a></div>
-      <div><h2>Наша идея</h2><p>Создаём сладкие подарки, которые радуют ещё до первого кусочка.</p></div>
-      <a class="brand brand--footer" href="#top" aria-label="Наверх"><span></span></a>
-      <form class="subscribe"><label for="footer-email">Письма о новых коллекциях</label><div><input id="footer-email" type="email" placeholder="Ваш email"><button type="submit" aria-label="Подписаться">→</button></div></form>
-      <div class="socials"><a href="#">VK</a><a href="#">TG</a><a href="#">IN</a></div>
-    </div>
-    <div class="footer__bottom">© 2026 Berry · сделано с любовью</div>
-  </footer>
+  <?php require __DIR__ . '/footer.php'; ?>
 </body>
 </html>

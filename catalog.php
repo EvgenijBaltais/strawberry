@@ -8,15 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261021k">
+  <script src="script.js?v=20261021d" defer></script>
 </head>
 <body class="catalog-page">
-  <div class="announcement">Свежие ягоды · ручная работа · доставка по городу</div>
+  <?php require __DIR__ . '/announcement.php'; ?>
 
   <header class="site-header shell" id="top">
     <nav class="site-nav" aria-label="Основная навигация">
-      <a class="brand" href="/" aria-label="На главную"><span></span></a>
+      <a class="brand" href="/" aria-label="На главную"><img src="/assets/logo.png" alt=""></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
       <div class="site-nav__links" id="menu">
         <a href="/">Главная</a>
@@ -69,67 +69,67 @@
 
       <div class="catalog-grid" id="catalog-grid">
         <article class="product-card catalog-card reveal" data-category="strawberry" data-price="1490" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#e94558" href="/product" aria-label="Клубника Классика"><span>01</span></a>
+          <a class="product-card__visual" href="/product" aria-label="Клубника Классика"><img src="assets/images/strawberry-classic.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="/product">Клубника «Классика»</a></h3><p>от 1 490 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="strawberry" data-price="1790" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#f2a9b9" href="#" aria-label="Клубника Розовый крем"><span>02</span></a>
+          <a class="product-card__visual" href="#" aria-label="Клубника Розовый крем"><img src="assets/images/strawberry-pink.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Розовый крем</a></h3><p>от 1 790 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="raspberry" data-price="1290" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#bd294f" href="#" aria-label="Малина в белом шоколаде"><span>03</span></a>
+          <a class="product-card__visual" href="#" aria-label="Малина в белом шоколаде"><img src="assets/images/raspberry-chocolate.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Малина в белом</a></h3><p>от 1 290 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="blueberry" data-price="1190" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#7faacb" href="#" aria-label="Черника в темном шоколаде"><span>04</span></a>
+          <a class="product-card__visual" href="#" aria-label="Черника в темном шоколаде"><img src="assets/images/blueberry-skewer.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Черника в тёмном</a></h3><p>от 1 190 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="donuts" data-price="990" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#f2c55c" href="#" aria-label="Ягодные пончики Солнечные"><span>05</span></a>
+          <a class="product-card__visual" href="#" aria-label="Ягодные пончики Солнечные"><img src="assets/images/donuts-berry.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Пончики «Солнечные»</a></h3><p>от 990 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="donuts" data-price="1090" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#c5a3d5" href="#" aria-label="Черничные пончики"><span>06</span></a>
+          <a class="product-card__visual" href="#" aria-label="Черничные пончики"><img src="assets/images/donut-single.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Черничные пончики</a></h3><p>от 1 090 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="candies" data-price="1390" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#8fc9be" href="#" aria-label="Конфеты Фисташка и малина"><span>07</span></a>
+          <a class="product-card__visual" href="#" aria-label="Конфеты Фисташка и малина"><img src="assets/images/truffles.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Фисташка и малина</a></h3><p>от 1 390 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="candies" data-price="1590" data-available="false">
-          <a class="product-card__visual color-panel" style="--swatch:#efb27e" href="#" aria-label="Конфеты Соленая карамель"><span>08</span></a>
+          <a class="product-card__visual" href="#" aria-label="Конфеты Соленая карамель"><img src="assets/images/chocolates-box.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Солёная карамель</a></h3><p>от 1 590 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="strawberry" data-price="2190" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#c53b42" href="#" aria-label="Клубника Большой букет"><span>09</span></a>
+          <a class="product-card__visual" href="#" aria-label="Клубника Большой букет"><img src="assets/images/strawberry-bouquet.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Большой ягодный букет</a></h3><p>от 2 190 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="raspberry" data-price="1490" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#ee87a4" href="#" aria-label="Малиновое ассорти"><span>10</span></a>
+          <a class="product-card__visual" href="#" aria-label="Малиновое ассорти"><img src="assets/images/raspberry-chocolate.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Малиновое ассорти</a></h3><p>от 1 490 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="blueberry" data-price="1390" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#506a9f" href="#" aria-label="Черника Ночное небо"><span>11</span></a>
+          <a class="product-card__visual" href="#" aria-label="Черника Ночное небо"><img src="assets/images/berry-chocolate.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Черника «Ночное небо»</a></h3><p>от 1 390 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="donuts" data-price="1190" data-available="false">
-          <a class="product-card__visual color-panel" style="--swatch:#e99b6d" href="#" aria-label="Клубничные пончики"><span>12</span></a>
+          <a class="product-card__visual" href="#" aria-label="Клубничные пончики"><img src="assets/images/donuts-berry.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Клубничные пончики</a></h3><p>от 1 190 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="candies" data-price="1690" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#7f5d47" href="#" aria-label="Шоколадное ассорти"><span>13</span></a>
+          <a class="product-card__visual" href="#" aria-label="Шоколадное ассорти"><img src="assets/images/chocolates-box.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Шоколадное ассорти</a></h3><p>от 1 690 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="strawberry" data-price="1890" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#e7636d" href="#" aria-label="Клубника Праздник"><span>14</span></a>
+          <a class="product-card__visual" href="#" aria-label="Клубника Праздник"><img src="assets/images/strawberry-party.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Клубника «Праздник»</a></h3><p>от 1 890 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="raspberry" data-price="1590" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#d17c95" href="#" aria-label="Малина и лепестки"><span>15</span></a>
+          <a class="product-card__visual" href="#" aria-label="Малина и лепестки"><img src="assets/images/raspberry-chocolate.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Малина и лепестки</a></h3><p>от 1 590 ₽</p>
         </article>
         <article class="product-card catalog-card reveal" data-category="candies" data-price="1990" data-available="true">
-          <a class="product-card__visual color-panel" style="--swatch:#92b381" href="#" aria-label="Подарочная коллекция"><span>16</span></a>
+          <a class="product-card__visual" href="#" aria-label="Подарочная коллекция"><img src="assets/images/gift-box.jpg" alt="" loading="lazy" decoding="async"></a>
           <h3><a href="#">Подарочная коллекция</a></h3><p>от 1 990 ₽</p>
         </article>
       </div>
@@ -138,19 +138,6 @@
       <nav class="pagination" aria-label="Страницы каталога"><span aria-current="page">1</span><a href="#">2</a><a href="#" aria-label="Следующая страница">→</a></nav>
     </section>
   </main>
-
-  <footer class="footer" id="delivery">
-    <div class="shell footer__grid">
-      <div>
-        <h2>Навигация</h2>
-        <a href="/">Главная</a><a href="/catalog">Каталог</a><a href="/#delivery">Доставка</a><a href="/contact">Контакты</a><a href="/policy">Согласие на обработку персональных данных</a>
-      </div>
-      <div><h2>Наша идея</h2><p>Создаём сладкие подарки, которые радуют ещё до первого кусочка.</p></div>
-      <a class="brand brand--footer" href="#top" aria-label="Наверх"><span></span></a>
-      <form class="subscribe"><label for="email">Письма о новых коллекциях</label><div><input id="email" type="email" placeholder="Ваш email"><button type="submit" aria-label="Подписаться">→</button></div></form>
-      <div class="socials"><a href="#">VK</a><a href="#">TG</a><a href="#">IN</a></div>
-    </div>
-    <div class="footer__bottom">© 2026 Berry · сделано с любовью</div>
-  </footer>
+  <?php require __DIR__ . '/footer.php'; ?>
 </body>
 </html>

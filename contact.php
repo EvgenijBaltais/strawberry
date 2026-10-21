@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261021k">
+  <script src="script.js?v=20261021d" defer></script>
 </head>
 <body>
-  <div class="announcement">Свежие ягоды · ручная работа · доставка по городу</div>
+  <?php require __DIR__ . '/announcement.php'; ?>
   <header class="site-header shell" id="top">
     <nav class="site-nav" aria-label="Основная навигация">
-      <a class="brand" href="/" aria-label="На главную"><span></span></a>
+      <a class="brand" href="/" aria-label="На главную"><img src="/assets/logo.png" alt=""></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
       <div class="site-nav__links" id="menu">
         <a href="/">Главная</a>
@@ -39,29 +39,37 @@
       <p class="eyebrow">Давайте знакомиться</p>
       <h1 id="contact-title">Контакты</h1>
       <p>Есть вопрос или особенная идея для подарка? Напишите нам — всё обсудим и поможем выбрать набор.</p>
-      <p><strong>Мы на связи:</strong> ежедневно, с 9:00 до 20:00</p>
+      <div class="contact-details">
+        <h2>Контакты для связи</h2>
+        <p><strong>ИП БАЛТАЙС ЕВГЕНИЙ АЛЕКСАНДРОВИЧ</strong><br>Московская область<br>ИНН: 502479223455 · ОГРН: 321508100241350</p>
+        <p>Телефон: <a href="tel:+79057383987">+7 (905) 738-39-87</a><br>Email: <a href="mailto:mailto@stars-box.ru">mailto@stars-box.ru</a><br>Telegram: <a href="https://t.me/evgeniyblts" target="_blank" rel="noopener noreferrer">Написать в Telegram</a></p>
+      </div>
 
-      <form class="contact-form">
-        <label><span>Имя</span><input type="text" name="name" placeholder="Имя" autocomplete="name"></label>
-        <label><span>Email</span><input type="email" name="email" placeholder="Email *" autocomplete="email" required></label>
-        <label class="contact-form__wide"><span>Телефон</span><input type="tel" name="phone" placeholder="Телефон" autocomplete="tel"></label>
-        <label class="contact-form__wide"><span>Сообщение</span><textarea name="message" rows="5" placeholder="Сообщение" required></textarea></label>
+      <form class="contact-form" action="/contact-submit.php" method="post">
+        <label><span>Имя</span><input type="text" name="name" placeholder="Имя" autocomplete="name" maxlength="120"></label>
+        <label><span>Email</span><input type="email" name="email" placeholder="Email" autocomplete="email" maxlength="254"></label>
+        <label class="contact-form__wide"><span>Телефон</span><input type="tel" name="phone" placeholder="Телефон *" autocomplete="tel" required maxlength="32"></label>
+        <label class="contact-form__wide"><span>Сообщение</span><textarea name="message" rows="5" placeholder="Сообщение *" required minlength="3" maxlength="5000"></textarea></label>
+        <fieldset class="contact-preference contact-form__wide">
+          <legend>Какой способ связи для вас предпочтительнее?</legend>
+          <div class="contact-preference__options">
+            <label><input type="radio" name="contact_method" value="Telegram" checked><span>Telegram</span></label>
+            <label><input type="radio" name="contact_method" value="Телефон"><span>Телефон</span></label>
+            <label><input type="radio" name="contact_method" value="Не важно"><span>Не важно</span></label>
+          </div>
+          <div class="contact-preference__options contact-preference__options--secondary" aria-label="Формат ответа">
+            <label><input type="radio" name="contact_type" value="Сообщение" checked><span>Сообщение</span></label>
+            <label><input type="radio" name="contact_type" value="Звонок"><span>Звонок</span></label>
+          </div>
+        </fieldset>
+        <div class="contact-consent contact-form__wide">
+          <label><input type="checkbox" name="consent" value="1" required><span>Согласен с <a href="/policy" target="_blank" rel="noopener">правилами обработки персональных данных</a>.</span></label>
+        </div>
         <button class="button" type="submit">Отправить</button>
-        <p class="contact-form__consent">Нажимая «Отправить», вы даёте <a href="/policy" target="_blank">согласие на обработку персональных данных</a>.</p>
-        <p class="contact-form__status" hidden role="status">Спасибо! Сообщение подготовлено.</p>
+        <p class="contact-form__status" hidden role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
-
-  <footer class="footer" id="delivery">
-    <div class="shell footer__grid">
-      <div><h2>Навигация</h2><a href="/">Главная</a><a href="/catalog">Каталог</a><a href="/#delivery">Доставка</a><a href="/contact">Контакты</a><a href="/policy">Согласие на обработку персональных данных</a></div>
-      <div><h2>Наша идея</h2><p>Создаём сладкие подарки, которые радуют ещё до первого кусочка.</p></div>
-      <a class="brand brand--footer" href="#top" aria-label="Наверх"><span></span></a>
-      <form class="subscribe"><label for="footer-email">Письма о новых коллекциях</label><div><input id="footer-email" type="email" placeholder="Ваш email"><button type="submit" aria-label="Подписаться">→</button></div></form>
-      <div class="socials"><a href="#">VK</a><a href="#">TG</a><a href="#">IN</a></div>
-    </div>
-    <div class="footer__bottom">© 2026 Berry · сделано с любовью</div>
-  </footer>
+  <?php require __DIR__ . '/footer.php'; ?>
 </body>
 </html>

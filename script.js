@@ -47,7 +47,6 @@ document.addEventListener('click', () => {
   });
 });
 
-document.querySelector('.subscribe')?.addEventListener('submit', (event) => event.preventDefault());
 
 const CART_STORAGE_KEY = 'berryCart';
 
@@ -231,10 +230,36 @@ if (cartContent) {
   renderCart();
 }
 
-document.querySelector('.contact-form')?.addEventListener('submit', (event) => {
+document.querySelector('.contact-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  event.currentTarget.querySelector('.contact-form__status').hidden = false;
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('.contact-form__status');
+  button.disabled = true;
+  button.textContent = 'Отправка…';
+  status.hidden = true;
+  status.classList.remove('is-error');
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+      credentials: 'same-origin'
+    });
+    const result = await response.json();
+    if (!response.ok || !result.ok) throw new Error(result.message || 'Не удалось отправить сообщение.');
+    status.textContent = 'Спасибо! Сообщение отправлено.';
+    form.reset();
+  } catch (error) {
+    status.textContent = error.message || 'Не удалось отправить сообщение. Попробуйте позже.';
+    status.classList.add('is-error');
+  } finally {
+    status.hidden = false;
+    button.disabled = false;
+    button.textContent = 'Отправить';
+  }
 });
 
 // Уведомление о cookie: повторно показывается через 30 дней,
@@ -249,7 +274,7 @@ document.querySelector('.contact-form')?.addEventListener('submit', (event) => {
 
   document.body.insertAdjacentHTML('beforeend', `
     <aside class="cookie-warning" aria-label="Уведомление о cookie">
-      <p class="cookie-text">Мы используем файлы cookie для улучшения работы сайта. Оставаясь на сайте, вы соглашаетесь с нашей <a href="/policy" target="_blank" rel="noopener">политикой обработки данных</a>.</p>
+      <p class="cookie-text">Мы используем файлы cookie для улучшения работы сайта. Оставаясь на сайте, вы соглашаетесь с нашей <a href="/cookie-policy" target="_blank" rel="noopener">политикой использования cookie</a>.</p>
       <button class="cookie-submit" type="button">Отлично!</button>
     </aside>
   `);
