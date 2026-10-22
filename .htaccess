@@ -7,6 +7,7 @@ RewriteCond %{THE_REQUEST} \s/+index\.(?:php|html)[\s?] [NC]
 RewriteRule ^index\.(?:php|html)$ / [R=301,L]
 
 # Убираем расширения из прямых и старых ссылок.
+RewriteRule ^soon\.php$ - [L]
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.(?:php|html)[\s?] [NC]
 RewriteRule ^(.+)\.(?:php|html)$ /$1 [R=301,L,NE]
 
